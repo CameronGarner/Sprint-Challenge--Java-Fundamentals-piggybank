@@ -29,8 +29,8 @@ public class CoinController {
         totalList.forEach((d) -> sum += d);
         coinList.forEach((c) -> System.out.println(c));
         System.out.println("The piggy bank holds " + sum);
+        sum = 0;
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    //empty commit
 }
