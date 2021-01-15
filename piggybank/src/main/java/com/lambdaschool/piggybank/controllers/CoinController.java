@@ -27,7 +27,8 @@ public class CoinController {
         coinrepos.findAll().iterator().forEachRemaining((coinList::add));
         coinList.forEach((c) -> totalList.add(c.getQuantity() * c.getValue()));
         totalList.forEach((d) -> sum += d);
-        System.out.println(coinList + " The piggy bank holds " + sum);
+        coinList.forEach((c) -> System.out.println(c));
+        System.out.println("The piggy bank holds " + sum);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
