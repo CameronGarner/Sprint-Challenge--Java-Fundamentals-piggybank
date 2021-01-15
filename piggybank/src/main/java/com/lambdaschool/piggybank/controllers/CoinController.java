@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.awt.geom.Arc2D;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,8 @@ public class CoinController {
 
     double sum = 0;
 
-    @GetMapping(value = "/total" , produces = "application/json")
+
+    @GetMapping(value = "/total", produces = "application/json")
     public ResponseEntity<?> listTotal(){
         List<Coin> coinList = new ArrayList<>();
         List<Double> totalList = new ArrayList<>();
@@ -26,6 +28,7 @@ public class CoinController {
         coinList.forEach((c) -> totalList.add(c.getQuantity() * c.getValue()));
         totalList.forEach((d) -> sum += d);
         System.out.println(coinList + " The piggy bank holds " + sum);
+
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

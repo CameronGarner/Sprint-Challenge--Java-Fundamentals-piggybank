@@ -8,16 +8,15 @@ public class Coin {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long coinid;
-
     private String name;
     private String nameplural;
     private double value;
-    private int quantity;
+    private long quantity;
 
     public Coin() {
     }
 
-    public Coin(String name, String nameplural, double value, int quantity) {
+    public Coin(String name, String nameplural, double value, long quantity) {
         this.name = name;
         this.nameplural = nameplural;
         this.value = value;
@@ -56,11 +55,11 @@ public class Coin {
         this.value = value;
     }
 
-    public int getQuantity() {
+    public long getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(long quantity) {
         this.quantity = quantity;
     }
 
