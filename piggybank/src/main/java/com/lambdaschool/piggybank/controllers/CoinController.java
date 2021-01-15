@@ -31,4 +31,5 @@ public class CoinController {
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    //empty commit
 }
